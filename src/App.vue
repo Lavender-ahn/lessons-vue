@@ -55,7 +55,7 @@
                class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">{{ l.subject }}</h5>
-            <p class="card-text medium text-muted">
+            <p class="card-text small text-muted">
               <i class="bi bi-geo-alt"></i> {{ l.location }}<br>
               <i class="bi bi-cash"></i> £{{ l.price }}<br>
               <i class="bi bi-person"></i> Spaces: {{ l.space }}
