@@ -1,12 +1,12 @@
 <template>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top .navbar.fixed-top">
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-white sticky-top .navbar.fixed-top">
     <div class="container-fluid">
-      <!-- Brand -->
+
       <a class="navbar-brand fw-bold" href="#">📚 Lesson Shop</a>
 
-      <!-- Search -->
+
       <form class="d-flex flex-grow-1 me-3" @submit.prevent>
         <input v-model="query"
                class="form-control me-2"
@@ -15,7 +15,6 @@
                @input="debouncedSearch">
       </form>
 
-      <!-- Sort dropdown -->
       <select v-model="sortBy"
               class="form-select form-select-sm w-auto me-2">
         <option value="subject">Subject</option>
@@ -27,7 +26,7 @@
         {{ asc ? '▲' : '▼' }}
       </button>
 
-      <!-- Cart button -->
+
       <button class="btn btn-warning position-relative"
               data-bs-toggle="offcanvas" data-bs-target="#cart">
         <i class="bi bi-cart4"></i>
@@ -40,7 +39,6 @@
     </div>
   </nav>
 
-  <!-- HERO BANNER (optional image + tagline) -->
   <header class="hero d-flex align-items-center .hero-offset">
     <div class="container text-center text-white">
       <h1 class="display-5 fw-bold">Learn Anything, Anywhere</h1>
@@ -48,8 +46,8 @@
     </div>
   </header>
 
-  <!-- LESSON GRID -->
-  <section class="container-fluid mt-5 px-4">
+
+  <section class="container mt-5 px-4">
     <div class="row g-4">
       <div v-for="l in filteredSorted" :key="l._id" class="col-md-4">
         <div class="card h-100 shadow-sm">
@@ -57,7 +55,7 @@
                class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">{{ l.subject }}</h5>
-            <p class="card-text small text-muted">
+            <p class="card-text medium text-muted">
               <i class="bi bi-geo-alt"></i> {{ l.location }}<br>
               <i class="bi bi-cash"></i> £{{ l.price }}<br>
               <i class="bi bi-person"></i> Spaces: {{ l.space }}
@@ -73,7 +71,7 @@
     </div>
   </section>
 
-  <!-- OFF‑CANVAS CART -->
+
   <div class="offcanvas offcanvas-end" tabindex="-1" id="cart">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">🛒 Cart</h5>
@@ -90,7 +88,7 @@
       </ul>
       <p v-else class="text-muted">Your cart is empty.</p>
 
-      <!-- CHECKOUT -->
+
       <button class="btn btn-success w-100" data-bs-toggle="modal"
               data-bs-target="#checkout" :disabled="!cart.length">
         Checkout
@@ -98,7 +96,7 @@
     </div>
   </div>
 
-  <!-- CHECKOUT MODAL -->
+
   <div class="modal fade" id="checkout" tabindex="-1">
     <div class="modal-dialog">
       <form class="modal-content needs-validation" novalidate>
@@ -125,7 +123,7 @@
     </div>
   </div>
 
-    <!-- ✅ Success toast -->
+
   <div class="toast-container position-fixed top-0 end-0 p-3">
     <div id="orderToast" class="toast align-items-center text-white bg-success"
         role="alert" aria-live="assertive" aria-atomic="true">
