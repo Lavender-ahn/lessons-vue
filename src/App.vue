@@ -1,7 +1,7 @@
 <template>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=shopping_cart" />
  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-white sticky-top .navbar.fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top .navbar.fixed-top">
     <div class="container-fluid">
 
       <a class="navbar-brand fw-bold" href="#">📚 Lesson Shop</a>
